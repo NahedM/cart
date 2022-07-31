@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+
 class Product extends Component {
   state = {
     quantity: 11,
@@ -19,7 +20,7 @@ class Product extends Component {
     );
   }
 
-  getBadgeClasses() {
+  getBadgeClsses() {
     let classes = "badge me-2 bg-";
     classes += this.state.quantity === 0 ? "warning text-dark" : "primary";
     return classes;

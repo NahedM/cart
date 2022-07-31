@@ -1,12 +1,14 @@
 import React, { Component } from "react";
+import Products from "./components/Products";
 
 class App extends Component {
   render() {
     return (
-      <div>
+      <>
         <h1>Välkommen</h1>
         <p>Jag heter Nahed</p>
-      </div>
+        <Products />
+      </>
     );
   }
 }
