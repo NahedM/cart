@@ -20,7 +20,7 @@ class Product extends Component {
     );
   }
 
-  getBadgeClsses() {
+  getBadgeClasses() {
     let classes = "badge me-2 bg-";
     classes += this.state.quantity === 0 ? "warning text-dark" : "primary";
     return classes;
