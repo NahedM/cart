@@ -15,8 +15,13 @@ class Products extends Component {
     const products = this.state.products.filter((p) => p.id !== id);
     this.setState({ products });
   };
-  handleIncrement = () => {
-    this.setState({ quantity: this.state.quantity + 1 });
+  // this.setState({ quantity: this.state.quantity + 1 });
+  handleIncrement = (product) => {
+    const products = [...this.state.products];
+    const index = products.indexOf(product);
+    products[0] = { ...product };
+    products[index].quantity++;
+    this.setState({ products });
   };
 
   handleReset = () => {
