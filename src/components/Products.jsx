@@ -15,16 +15,31 @@ class Products extends Component {
     const products = this.state.products.filter((p) => p.id !== id);
     this.setState({ products });
   };
+  handleIncrement = () => {
+    this.setState({ quantity: this.state.quantity + 1 });
+  };
+
+  handleReset = () => {
+    const products = this.state.products.map((product) => ({
+      ...product,
+      quantity: 0,
+    }));
+    this.setState({ products });
+  };
 
   render() {
     return (
       <>
+        <button onClick={this.handleReset} className="btn.btn-primary">
+          Reset
+        </button>
         {this.state.products.map((product) => (
           <Product
             key={product.id}
             id={product.id}
             product={product}
             onDelete={this.handleDelete}
+            onIncrement={this.handleIncrement}
           />
         ))}
       </>
